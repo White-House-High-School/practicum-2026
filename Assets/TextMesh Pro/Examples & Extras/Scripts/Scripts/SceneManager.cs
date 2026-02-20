@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class StartGame : MonoBehaviour
 {
-    public void StartGameFunction()
+    public void SceneChange()
     {
         // Checks if the game is paused or not and if it is, it resets the timeScale and resets the isPaused boolean. (Ref. PauseGame.cs)
         if (PauseGame.isPaused)
