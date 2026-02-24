@@ -21,14 +21,14 @@ public class EnemyHealth : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    void Update()
+    /*void Update()
     {
 
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             TakeDamage(5);
         }
-    }
+    }*/
 
     public void TakeDamage(int damage)
     {
