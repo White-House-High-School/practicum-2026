@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement; 
 using UnityEngine.UI; 
 
-public class StartGame : MonoBehaviour
+public class SceneChanger : MonoBehaviour
 {
     public void SceneChange()
     {

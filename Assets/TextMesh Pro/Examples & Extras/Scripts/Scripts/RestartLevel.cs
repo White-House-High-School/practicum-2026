@@ -12,6 +12,7 @@
                 Time.timeScale = 1.0f;
                 // Resets the isPaused Boolean (Ref. PauseGame.cs)
                 PauseGame.isPaused = !PauseGame.isPaused;
+                //isGameOver = !isGameOver;
             }
             // Loads the current scene the button was pressed on.
     		SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
