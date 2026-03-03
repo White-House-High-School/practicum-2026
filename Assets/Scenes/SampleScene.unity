@@ -519,7 +519,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1343943223}
-  - component: {fileID: 1343943224}
+  - component: {fileID: 1343943225}
   m_Layer: 0
   m_Name: EnemyManager
   m_TagString: Untagged
@@ -542,7 +542,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1343943224
+--- !u!114 &1343943225
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -551,10 +551,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1343943222}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cfd00201d8ba154089262156c6bd5fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 81bc461d1842e4c4cad3e80e2035b2ab, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
-  enemyBody: {fileID: 4575841255079537348, guid: 6836f8a0a8cc0cd4e9048d80d665d47d, type: 3}
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyManager
+  wave: {fileID: 11400000, guid: f045cf08d8a7b65479f7683ce754e74e, type: 2}
 --- !u!1 &1419661363
 GameObject:
   m_ObjectHideFlags: 0
