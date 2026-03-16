@@ -10,7 +10,7 @@ public class EnemyHealth : MonoBehaviour
     public RectTransform healthBarFill;
     public RectTransform healthBarBackground;
     private Animator animator;
-    private bool isDead = false;
+    public bool isDead = false;
 
     
     
@@ -21,14 +21,14 @@ public class EnemyHealth : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    /*void Update()
+    void Update()
     {
-
+        // REMOVE LATER
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             TakeDamage(5);
         }
-    }*/
+    }
 
     public void TakeDamage(int damage)
     {
@@ -41,8 +41,6 @@ public class EnemyHealth : MonoBehaviour
         {
             Die();
         }
-
-
     }
 
     void UpdateHealthBar()
@@ -59,10 +57,10 @@ public class EnemyHealth : MonoBehaviour
 
         // Stop movement
         EnemyMovement movement = GetComponent<EnemyMovement>();
-if (movement != null)
-{
-    movement.enabled = false;
-}
+        if (movement != null)
+        {
+            movement.enabled = false;
+        }
 
 
         // Optional: destroy after animation
