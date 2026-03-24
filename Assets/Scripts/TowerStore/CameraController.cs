@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+/* THIS IS A PLACEHOLDER CAMERA */
 public class CameraController : MonoBehaviour
 {
     public float panSpeed = 30f;
