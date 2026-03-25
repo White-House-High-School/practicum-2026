@@ -384,8 +384,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5596690745497629487}
-        m_TargetAssemblyTypeName: StartGame, Assembly-CSharp
+      - m_Target: {fileID: 1231023389}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
         m_MethodName: SceneChange
         m_Mode: 1
         m_Arguments:
@@ -852,6 +852,17 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &1231023389 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6956883220587586817, guid: b65cb88fbc245114a8c3ff28c809576c, type: 3}
+  m_PrefabInstance: {fileID: 2984828631451874359}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a32548fd82c3a346b5f452e46d51c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonManager
 --- !u!1 &1544912141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,6 +1212,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794325300}
   m_CullTransparentMesh: 1
+--- !u!114 &1882091067 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2518738335561830553, guid: b65cb88fbc245114a8c3ff28c809576c, type: 3}
+  m_PrefabInstance: {fileID: 2984828631451874359}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a32548fd82c3a346b5f452e46d51c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonManager
 --- !u!1 &2073149043
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,8 +1306,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2097941438}
-        m_TargetAssemblyTypeName: QuitGame, Assembly-CSharp
+      - m_Target: {fileID: 1882091067}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
@@ -1334,17 +1356,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073149043}
   m_CullTransparentMesh: 1
---- !u!114 &2097941438 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1460105793761595533, guid: b65cb88fbc245114a8c3ff28c809576c, type: 3}
-  m_PrefabInstance: {fileID: 2984828631451874359}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc9962eeeb7ceee408afb79d74c782b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::QuitGame
 --- !u!1 &2118258879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1539,17 +1550,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b65cb88fbc245114a8c3ff28c809576c, type: 3}
---- !u!114 &5596690745497629487 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5677245748464221840, guid: b65cb88fbc245114a8c3ff28c809576c, type: 3}
-  m_PrefabInstance: {fileID: 2984828631451874359}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 835a7848f881d284da77f4b56bbe48d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StartGame
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

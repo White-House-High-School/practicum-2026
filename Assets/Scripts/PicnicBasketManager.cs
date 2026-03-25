@@ -6,8 +6,8 @@ public class PicnicBasketManager : MonoBehaviour
 
 {
 
-    private GameManager gameManager;
-    [SerializeField] private int antDamage; // Adjust the damage value as needed
+    [SerializeField] private ButtonManager buttonManager;
+    [SerializeField] private int antDamage = 100; // Adjust the damage value as needed
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -15,7 +15,7 @@ public class PicnicBasketManager : MonoBehaviour
 
     void Start()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        
     }
     void Update()
     {
@@ -27,7 +27,7 @@ public class PicnicBasketManager : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Destroy(collision.gameObject);
-            gameManager.CalculatePicnicHP(antDamage);
+            buttonManager.CalculatePicnicHP(antDamage);
         }
         
     }

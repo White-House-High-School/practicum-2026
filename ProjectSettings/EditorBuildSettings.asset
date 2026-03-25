@@ -6,8 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/SampleScene_Pathing.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: d5b2af867243a3e43ab2934856cf5e3a
+  - enabled: 1
+    path: Assets/Scenes/Main_TowerStore.unity
+    guid: 020c115353117b940adcf245d35c1a73
+  - enabled: 1
+    path: Assets/Scenes/SampleScene_CameraControls.unity
+    guid: e4636fb90453fe444a3de559f8592c4c
+  - enabled: 1
+    path: Assets/Scenes/SampleScene_GameManager.unity
+    guid: 39a3fc891908a69489892eeba78434a0
+  - enabled: 1
+    path: Assets/Scenes/SampleScene_UI.unity
+    guid: 854e88f65d399ae4387c98000ef82375
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
