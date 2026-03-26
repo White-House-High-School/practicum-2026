@@ -3,12 +3,15 @@ using UnityEngine;
 public class Pellet : MonoBehaviour
 {
     private Transform target;
+
     private float speed = 70f;
+    public float explosionRadius = 0f;
+    public GameObject impactEffect;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void Seek(Transform target)
+    public void Seek(Transform _target)
     {
-        this.target = target;
+        target = _target;
     }   
 
     // Update is called once per frame
@@ -27,9 +30,39 @@ public class Pellet : MonoBehaviour
             return;
         }
         transform.Translate(dir.normalized * distanceThisFrame , Space.World);
+        transform.LookAt(target);
     }
     void HitTarget()
     {
+        GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
+        Destroy(effectIns, 2f);
+
+        if (explosionRadius > 0f)
+        {
+            Explode();
+        }
+        else 
+        (
+            Damage(target);
+        )
+
         Destroy(gameObject);
+    }
+
+    void Explode()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
+        foreach (Collider collider in colliders)
+        {
+            if (collider.tag == "Enemy")
+            {
+                Damage(collider.transform);
+            }
+        }
+    }
+
+    void Damage (Transform enemy)
+    {
+        Destroy(enemy.gameObject);
     }
 }

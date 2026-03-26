@@ -10,20 +10,13 @@ public class FlameTower : Tower
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        if (target == null)
-            return;
-            // Target lock on code
-        Vector3 dir = target.position - transform.position;
-        Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);  
-            if (fireCountdown <= 0f)
-        {
-            Shoot();
-            fireCountdown = 1f / fireRate;
-        }
-       fireCountdown -= Time.deltaTime;
+        base.Update();
+    }
+    void OnDrawGizmosSelected ()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
 }

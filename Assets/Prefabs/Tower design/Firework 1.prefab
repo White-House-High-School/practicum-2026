@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8864763602009953875}
   - component: {fileID: 7589687347354665474}
+  - component: {fileID: -2095195161821579030}
   m_Layer: 0
   m_Name: Firework 1
   m_TagString: Untagged
@@ -49,6 +50,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PelletEffect
   impactEffect: {fileID: 0}
+--- !u!114 &-2095195161821579030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321251518513718386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a7407d0e524e14f865b5bb900ecb0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Pellet
 --- !u!1 &1446996780765516127
 GameObject:
   m_ObjectHideFlags: 0

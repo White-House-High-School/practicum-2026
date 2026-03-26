@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class BasicTower : Tower
+public class LaserTower : Tower
 {
-
+  
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,14 +13,5 @@ public class BasicTower : Tower
     protected override void Update()
     {
         base.Update();
-                if (target == null)
-            return; 
-            if (fireCountdown <= 0f)
-        {
-            Shoot();
-            fireCountdown = 1f / fireRate;
-         }
-       fireCountdown -= Time.deltaTime;
     }
-
 }
