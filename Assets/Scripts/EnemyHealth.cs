@@ -69,5 +69,8 @@ if (movement != null)
         Destroy(gameObject, 2f);
     }
     
-
+public bool getIsDead()
+    {
+        return isDead;
+    }
 }
