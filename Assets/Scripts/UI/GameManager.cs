@@ -5,7 +5,7 @@ using System.Collections;
 using UnityEngine.InputSystem;
 using UnityEngine.AI;
 using System.Runtime.Serialization;
-public class ButtonManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     // Keeps track of if the game is paused.
     public static bool isPaused = false;

@@ -35,7 +35,7 @@ public class Pellet : MonoBehaviour
     void HitTarget()
     {
         GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
-        Destroy(effectIns, 2f);
+        Destroy(effectIns, 5f);
 
         if (explosionRadius > 0f)
         {
@@ -65,4 +65,11 @@ public class Pellet : MonoBehaviour
     {
         Destroy(enemy.gameObject);
     }
+
+    void OnDrawGizmoSelected ()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere (transform.position, explosionRadius);
+    }
+    
 }

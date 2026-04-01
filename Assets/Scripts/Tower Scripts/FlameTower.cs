@@ -14,9 +14,4 @@ public class FlameTower : Tower
     {
         base.Update();
     }
-    void OnDrawGizmosSelected ()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, explosionRadius);
-    }
 }
