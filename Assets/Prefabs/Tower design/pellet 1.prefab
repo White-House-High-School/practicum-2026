@@ -125,4 +125,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a7407d0e524e14f865b5bb900ecb0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pellet
-  impactEffect: {fileID: 0}
+  explosionRadius: 0
+  impactEffect: {fileID: 8400151827324785211, guid: a9c92146b19fc36458721c14c55590fd, type: 3}
