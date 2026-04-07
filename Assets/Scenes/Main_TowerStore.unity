@@ -8529,19 +8529,19 @@ MonoBehaviour:
   tower1:
     prefab: {fileID: 1048706967}
     cost: 5
-    positionOffset: {x: 0, y: 5.8, z: -2.5}
+    positionOffset: {x: 0.08, y: 5.8, z: -2.5}
   tower2:
     prefab: {fileID: 1702315090}
     cost: 10
-    positionOffset: {x: -0.13, y: 5.85, z: -1.5}
+    positionOffset: {x: -0.1, y: 5.85, z: -1.35}
   tower3:
     prefab: {fileID: 393924643}
     cost: 25
-    positionOffset: {x: -0.05, y: 5.75, z: 1.5}
+    positionOffset: {x: -0.05, y: 5.75, z: 1.75}
   tower4:
     prefab: {fileID: 1729188591}
     cost: 40
-    positionOffset: {x: -0.2, y: 13, z: 0}
+    positionOffset: {x: -0.2, y: 13, z: 0.6}
   tower5:
     prefab: {fileID: 4091763294126683615, guid: 3ebabcc8fe04edb459f225a3e5cbb124, type: 3}
     cost: 60

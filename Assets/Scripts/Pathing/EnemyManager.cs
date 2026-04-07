@@ -40,7 +40,8 @@ public class EnemyManager /* May need to be called WaveManager*/ : MonoBehaviour
 
     void SpawnNextEnemy() // Spawns the enemy that we are on right now.
     {
-        Instantiate(wave.enemies[waveIndex].enemyPrefab, new Vector3(0, 0, 0), Quaternion.identity); // Instantiates an enemy with the enemy model prefab at the picnic basket
+        GameObject prefab = wave.enemies[waveIndex].enemyPrefab;
+        Instantiate(prefab, new Vector3(-5, 0, 0), prefab.transform.rotation); // Instantiates an enemy with the enemy model prefab at the picnic basket
                                                                                                      // (hardcoded for now)
     }
 

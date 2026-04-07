@@ -3,16 +3,34 @@ using UnityEngine;
 public class Tower: MonoBehaviour
 {
     public Transform target;
+
+    [Header("General")]
+
+    public float range;
     public int damage;
-    public string enemyTag = "Enemy";
-    public Transform partToRotate;
-    public float turnSpeed = 10f;
+    public int cost;
+
+    [Header("Use bullets (default)")]
+
+    public GameObject pelletPrefab;
     public float fireRate = 1f;
     public float fireCountdown = 0f;
-    public int cost;
-    public float range;
-    public GameObject pelletPrefab;
+
+    [Header("Use Laser")]
+
+    public bool useLaser = false;
+    public LineRenderer lineRenderer;
+
+    [Header("Unity Setup Field")]
+
+    public string enemyTag = "Enemy";
+
+    public Transform partToRotate;
+    public float turnSpeed = 10f;
+
     public Transform firePoint;
+    
+
   
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -47,18 +65,44 @@ public class Tower: MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
+    {
+        if (target == null)
+        {
+            if (useLaser)
+            {
+                if (lineRenderer.enabled)
+                    lineRenderer.enabled = false;
+            }
+            return;
+        }
+            
+
+        LockOnTarget(); 
+
+        if (useLaser)
+        {
+            Laser();
+        }
+        else
+        {
+            if (fireCountdown <= 0f)
+        {
+            Shoot();
+            fireCountdown = 1f / fireRate;
+        }
+
+        fireCountdown -= Time.deltaTime;
+        }
+
+    }
+    public void LockOnTarget()
     {
             // Target lock on code
-        //Vector3 dir = target.position - transform.position;
-        //Quaternion lookRotation = Quaternion.LookRotation(dir);
-        //Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        //partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);  
-            //{
-            //Shoot();
-            //fireCountdown = 1f / fireRate;
-         //}
-       //fireCountdown -= Time.deltaTime;
+        Vector3 dir = target.position - transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(dir);
+        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f); 
     }
     public void Shoot()
     {
@@ -68,6 +112,16 @@ public class Tower: MonoBehaviour
         {
             pellet.Seek(target);
         }
+    }
+    public void Laser()
+    {
+        if (!lineRenderer.enabled)
+        {
+            lineRenderer.enabled = true;
+        }
+
+        lineRenderer.SetPosition(0, firePoint.position);
+        lineRenderer.SetPosition(1, target.position);
     }
 
     void OnDrawGizmosSelected()
