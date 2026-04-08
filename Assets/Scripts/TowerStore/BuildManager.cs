@@ -29,7 +29,7 @@ public class BuildManager : MonoBehaviour
 
         PlayerStats.Money -= towerToBuild.cost;
 
-        GameObject tower = Instantiate(towerToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
+        GameObject tower = Instantiate(towerToBuild.prefab, node.GetBuildPosition() + towerToBuild.positionOffset, Quaternion.identity);
         node.tower = tower;
 
         Debug.Log ("Turret build! Money left: " + PlayerStats.Money);
