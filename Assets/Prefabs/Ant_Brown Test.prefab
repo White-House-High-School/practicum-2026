@@ -191,6 +191,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c76e1dd902d7cfe488a45d500f98d871, type: 3}
       insertIndex: -1
       addedObject: {fileID: 507487014797778832}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c76e1dd902d7cfe488a45d500f98d871, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2898625714842143062}
   m_SourcePrefab: {fileID: 100100000, guid: c76e1dd902d7cfe488a45d500f98d871, type: 3}
 --- !u!4 &3804266029226897534 stripped
 Transform:
@@ -238,6 +241,24 @@ MonoBehaviour:
   maxHealth: 100
   healthBarFill: {fileID: 4025531964774342371}
   healthBarBackground: {fileID: 9060292222718146765}
+  isDead: 0
+--- !u!114 &-2898625714842143062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4575841255079537348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c1260caedd085b42887c810ea7de04c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  movementSpeed: 2
+  detectionThreshold: 0.02
+  timer: 0
+  type: 
+  rotationSpeed: 90
 --- !u!1001 &5323394361691156359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -371,7 +392,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f86d4004b962f45b1743b91dcb3ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RotateToCamera
-  mainCamera: {fileID: 0}
 --- !u!224 &4025531964774342371 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9096691846799815012, guid: 7db3c5a5f63a0c34c9d2c2701d665618, type: 3}
