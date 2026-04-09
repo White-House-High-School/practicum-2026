@@ -1,13 +1,14 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections;
+
 public class Node : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public Color hoverColor;
     
     
     public GameObject tower;
-    public Vector3 positionOffset;
+    public Vector3 positionOffset = new Vector3(10f, 10f, 10f);
     private Renderer rend;
     private Color startColor;
 
@@ -50,7 +51,7 @@ public class Node : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, I
 
     public Vector3 GetBuildPosition ()
     {
-        return transform.position + positionOffset;
+        return transform.position;
     }
     public void OnPointerClick(PointerEventData pointerEventData)
     {
