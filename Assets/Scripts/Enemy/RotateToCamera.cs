@@ -3,11 +3,11 @@ using UnityEngine;
 public class RotateToCamera: MonoBehaviour
 {
     // Reference to the main camera, automatically found if not assigned in the Inspector
-    private Camera mainCamera;
+    public Camera mainCamera;
 
     void Start()
     {
-        mainCamera = Camera.main;
+        // mainCamera = Camera.main;
     }
 
     // LateUpdate is called after all Update functions have been called
