@@ -4,7 +4,11 @@
 TagManager:
   serializedVersion: 3
   tags:
+<<<<<<< HEAD
   - TowerNode
+=======
+  - Enemy
+>>>>>>> 05214c88f1dae8ebdb568937a44109404c8368ec
   layers:
   - Default
   - TransparentFX
