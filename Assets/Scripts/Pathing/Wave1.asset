@@ -13,13 +13,5 @@ MonoBehaviour:
   m_Name: Wave1
   m_EditorClassIdentifier: Assembly-CSharp::EnemyWave
   enemies:
-  - enemyPrefab: {fileID: 4575841255079537348, guid: 455cd830cbd700543b9afd1944543027, type: 3}
-    delayBeforeSpawn: 5
-  - enemyPrefab: {fileID: 4575841255079537348, guid: 455cd830cbd700543b9afd1944543027, type: 3}
-    delayBeforeSpawn: 5
-  - enemyPrefab: {fileID: 4575841255079537348, guid: 455cd830cbd700543b9afd1944543027, type: 3}
-    delayBeforeSpawn: 5
-  - enemyPrefab: {fileID: 4575841255079537348, guid: 455cd830cbd700543b9afd1944543027, type: 3}
-    delayBeforeSpawn: 5
-  - enemyPrefab: {fileID: 4575841255079537348, guid: 455cd830cbd700543b9afd1944543027, type: 3}
+  - enemyPrefab: {fileID: 4575841255079537348, guid: 6836f8a0a8cc0cd4e9048d80d665d47d, type: 3}
     delayBeforeSpawn: 5

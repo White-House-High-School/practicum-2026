@@ -1,12 +1,15 @@
 using UnityEngine;
 
-public class EnemyManager /* May need to be called WaveManager*/ : MonoBehaviour
+public class EnemyManager: MonoBehaviour
 
 {
     int waveIndex; // Keeps track of which enemy in the wave is supposed to be spawned
     float timer; // The amount of time between spawns. Each enemy has its own individual timer attached to it.
 
     public EnemyWave wave; // An instance of the EnemyWave ScriptableObject. Contains one wave of enemies. Each enemy has a prefab of its model and a timer.
+
+    [SerializeField] private Transform antHill;
+    [SerializeField] private Transform ground;
 
     void Start()
     {
@@ -40,8 +43,13 @@ public class EnemyManager /* May need to be called WaveManager*/ : MonoBehaviour
 
     void SpawnNextEnemy() // Spawns the enemy that we are on right now.
     {
+        // Sets the ant's spawn point to the grass.
+        float spawnYCoord = antHill.position.y + (-1 *(antHill.position.y)); // Yes, VSCode. I. Know. That. The Parentheses. Are. Not. Necessary.
+        Vector3 spawnPoint = new Vector3(antHill.position.x, spawnYCoord, antHill.position.z);
+        
         GameObject prefab = wave.enemies[waveIndex].enemyPrefab;
-        Instantiate(prefab, new Vector3(-5, 0, 0), prefab.transform.rotation); // Instantiates an enemy with the enemy model prefab at the picnic basket
+
+        Instantiate(prefab, spawnPoint, prefab.transform.rotation); // Instantiates an enemy with the enemy model prefab at the ant hill
                                                                                                      // (hardcoded for now)
     }
 
