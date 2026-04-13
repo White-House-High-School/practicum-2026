@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 /* THIS IS A PLACEHOLDER CAMERA */
@@ -44,8 +45,7 @@ public class CameraController : MonoBehaviour
 
         transform.position = pos;
     }
-
-    void HandleZoom()
+void HandleZoom()
     {
         float scroll = Mouse.current.scroll.ReadValue().y;
 
@@ -56,4 +56,5 @@ public class CameraController : MonoBehaviour
 
         transform.position = pos;
     }
+    
 }
