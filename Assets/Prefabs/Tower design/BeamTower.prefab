@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4077373151574471831}
   - component: {fileID: 4776638721783874956}
   m_Layer: 0
-  m_Name: IceShooter
+  m_Name: BeamTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
