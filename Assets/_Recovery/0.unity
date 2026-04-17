@@ -8524,23 +8524,23 @@ MonoBehaviour:
   tower1:
     prefab: {fileID: 6319868269824590158, guid: 94e54cf9c2cceb6449e9485e31863a78, type: 3}
     cost: 5
-    positionOffset: {x: 0, y: 5, z: 0}
+    positionOffset: {x: 0, y: 5.2, z: 0}
   tower2:
     prefab: {fileID: 3240247667642862679, guid: 186c9b9ae72364e499d803ce813bcfac, type: 3}
     cost: 10
-    positionOffset: {x: -0.5, y: 5.75, z: -0.275}
+    positionOffset: {x: 0, y: 5.5, z: 0}
   tower3:
     prefab: {fileID: 4307316683739494238, guid: f63e05abf30ffa14196445f014fd03dc, type: 3}
     cost: 25
-    positionOffset: {x: -0.4, y: 5, z: 0.6}
+    positionOffset: {x: -0.5, y: 5, z: -0.5}
   tower4:
     prefab: {fileID: 804169617891185437, guid: 1b30d2f4bb33f6442af8350a95f73cca, type: 3}
     cost: 40
-    positionOffset: {x: -0.5, y: 10, z: -0.75}
+    positionOffset: {x: -0.5, y: 10, z: -0.5}
   tower5:
     prefab: {fileID: 4091763294126683615, guid: 3ebabcc8fe04edb459f225a3e5cbb124, type: 3}
     cost: 60
-    positionOffset: {x: 0, y: 10, z: 0}
+    positionOffset: {x: 0, y: 5, z: 0}
   tower6:
     prefab: {fileID: 2045053730488250011, guid: d166c0d8409e1a843b56a336dadfdf4c, type: 3}
     cost: 100
