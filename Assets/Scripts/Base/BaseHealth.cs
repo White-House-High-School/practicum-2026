@@ -7,7 +7,7 @@ public class BaseHealth : MonoBehaviour
     
     public bool isDead; 
 
-    [Header("UI Bar Settings")]
+    
     public RectTransform healthBarFill;
     public RectTransform healthBarBackground;
 
@@ -17,13 +17,15 @@ public class BaseHealth : MonoBehaviour
         UpdateHealthBar(); 
     }
 
+    
+
     public void TakeDamage(int damage)
     {
         if (isDead) return;
 
         currentHealth -= damage;
         
-        // Clamp prevents health from going below zero
+        
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); 
         
         UpdateHealthBar();
@@ -34,20 +36,15 @@ public class BaseHealth : MonoBehaviour
         }
     }
 
-    void UpdateHealthBar()
+void UpdateHealthBar()
     {
-        if (healthBarFill != null && healthBarBackground != null)
-        {
-            float healthPercent = currentHealth / maxHealth;
-            
-            float newWidth = healthPercent * healthBarBackground.rect.width;
-            healthBarFill.sizeDelta = new Vector2(newWidth, healthBarFill.sizeDelta.y);
-        }
+        float newWidth = currentHealth / maxHealth * healthBarBackground.sizeDelta.x;
+        healthBarFill.sizeDelta = new Vector2(newWidth, healthBarFill.sizeDelta.y);
     }
+
 
     void Die()
     {
         isDead = true;
-        Debug.Log("The picnic basket is empty! Game Over.");
     }
 }
