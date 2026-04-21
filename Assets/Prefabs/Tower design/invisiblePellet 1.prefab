@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8813437854183404225}
   - component: {fileID: 114050416923962558}
   m_Layer: 0
-  m_Name: invisiblePellet
+  m_Name: invisiblePellet 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
