@@ -7,6 +7,9 @@ TagManager:
   - TowerNode
   - enemy
   - Enemy
+  - Goal
+  - Scene Object
+  - Tower Node
   layers:
   - Default
   - TransparentFX

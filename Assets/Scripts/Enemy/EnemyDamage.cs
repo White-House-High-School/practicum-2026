@@ -2,15 +2,27 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public int damage = 1000;
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        
+
+        if (collision.gameObject.CompareTag("Goal"))
+        {
+
+            BaseHealth baseHealth = collision.gameObject.GetComponentInParent<BaseHealth>();
+
+            Debug.Log("BaseHealth found: " + baseHealth);
+
+            if (baseHealth != null)
+            {
+                baseHealth.TakeDamage(damage);
+                
+            }
+
+            
+
+            Destroy(gameObject);
+        }
     }
 }

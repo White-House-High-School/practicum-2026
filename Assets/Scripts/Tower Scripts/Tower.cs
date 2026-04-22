@@ -1,3 +1,5 @@
+using System.Security;
+using System.Xml.Schema;
 using UnityEngine;
 
 public class Tower: MonoBehaviour
@@ -29,6 +31,8 @@ public class Tower: MonoBehaviour
     public float turnSpeed = 10f;
 
     public Transform firePoint;
+
+    public ParticleSystem ps;
     
 
   
@@ -55,10 +59,12 @@ public class Tower: MonoBehaviour
         if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
+            ps.Play();
         }
         else
         {
             target = null;
+            ps.Stop();
         }
         
 
