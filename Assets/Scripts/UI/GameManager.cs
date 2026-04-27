@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement; 
-using UnityEngine.UI;
-using System.Collections;
+
+
 using UnityEngine.InputSystem;
-using UnityEngine.AI;
-using System.Runtime.Serialization;
+
+
+
+
 public class GameManager : MonoBehaviour
 {
     // Keeps track of if the game is paused.
@@ -13,13 +15,17 @@ public class GameManager : MonoBehaviour
     private InputAction pauseButton;
     // Refers to the Pause Screen in the Hierarchy.
     [SerializeField] private GameObject PauseScreen;
-    [SerializeField] private int picnicBasketHealth;
     public static bool isGameOver;
     [SerializeField] private GameObject GameOverScreen;
+    private GameObject HealthBar;
+    [SerializeField] private GameObject HealthBarPrefab;
+    [SerializeField] private GameObject Basket;
     public void Start()
     {
+        HealthBar = GameObject.Find("CurrentHealth");
         // Grabs the input from the pause button. (good)
         pauseButton = InputSystem.actions.FindAction("Pause");
+        //picnicBasketHealth = basket.GetHealth();
     }
     // Update is called once per frame
     void Update()
@@ -29,47 +35,59 @@ public class GameManager : MonoBehaviour
         {
             TogglePause();
         }
-        
-        if (picnicBasketHealth <= 0)
+        if (!PauseScreen.activeInHierarchy)
+        {
+            isPaused = false;
+            isGameOver = false;
+            Time.timeScale = 1.0f;
+        }
+        if (HealthBar == null)
         {
             if (!isGameOver)
             {
                 GameOver();
             }
         }
+
+        //Debug.Log(Time.timeScale);
     }
 
     public void SceneChange()
     {
             // Checks if the game is paused or not and if it is, it resets the timeScale and resets the isPaused boolean.
-            
-            
             Time.timeScale = 1.0f;
             isPaused = false;
             isGameOver = false;
-                    
-            
-
             // If the current scene is not Main Menu, load the main menu.
             if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("MainMenu"))
             {
                 SceneManager.LoadScene("MainMenu");
+                
             }
             // If the current scene is the main menu load the gamescene.
             else
             {
-                SceneManager.LoadScene("SampleScene_UI");
+                SceneManager.LoadScene("MainScene");
             }
+            
         
     }
     public void RestartGame() 
     {
             // Loads the current scene the button was pressed on.
+            Instantiate(HealthBarPrefab, Basket.transform.position, Quaternion.identity);
+
+            var baseHealth = Basket.GetComponent<BaseHealth>();
+            baseHealth.SetHealth(baseHealth.maxHealth);
+            Debug.Log("Max Health " + baseHealth.maxHealth);
+            Debug.Log("Current Health " + baseHealth.currentHealth);
+
     		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             Time.timeScale = 1.0f;
             isPaused = false;
             isGameOver = false;
-            picnicBasketHealth = 100;
+
+            
     }
 
     public void ExitGame()
@@ -115,18 +133,14 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1.0f;
         }
     }
-    public void CalculatePicnicHP(int antDamage)
-    {
-        picnicBasketHealth -= antDamage;
-        Debug.Log("Picnic Basket Health Is Now: " + picnicBasketHealth);
-    }
+    
     public void GameOver()
     {
         isGameOver = !isGameOver;
         {
             if (isGameOver)
             {
-                Debug.Log("Game Over!");
+//                Debug.Log("Game Over!");
                 Time.timeScale = 0.0f;
                 if (!GameOverScreen.activeInHierarchy)
                 {
@@ -142,6 +156,10 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+    }
+    public bool GetIsGameOver()
+    {
+        return isGameOver;
     }
     
 }

@@ -19,7 +19,6 @@ BoxCollider nodeCollider;
 
         NodeX = startPos.position.x;
         NodeZ = startPos.position.z;
-        Debug. Log(NodePrefab.transform.localScale);
         nodeCollider = NodePrefab.GetComponent<BoxCollider>();
         NodeArray = new GameObject[mapLength, mapWidth];
         makeNodeGrid();
@@ -41,7 +40,7 @@ BoxCollider nodeCollider;
             {         
                 for (int j = 0; j < mapWidth; j++)
                 {
-                    foreach (GameObject obj in GameObject. FindGameObjectsWithTag("Scene Object") )
+                    foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Scene Object") )
                     {
                         if (!pointIsInsideGameObject(obj, new Vector3(NodeX, 0, NodeZ)))
                         {

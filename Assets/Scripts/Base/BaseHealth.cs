@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class BaseHealth : MonoBehaviour
 {
-    public float maxHealth = 3000; 
+    public float maxHealth = 3000f; 
     public float currentHealth;
     
     public bool isDead; 
-
-    
+    private GameObject HealthBar;  
     public RectTransform healthBarFill;
     public RectTransform healthBarBackground;
 
@@ -15,6 +14,8 @@ public class BaseHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         UpdateHealthBar(); 
+        HealthBar = GameObject.Find("CurrentHealth");
+        
     }
 
     
@@ -32,7 +33,7 @@ public class BaseHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Die();
+            Destroy(HealthBar);
         }
     }
 
@@ -42,9 +43,13 @@ void UpdateHealthBar()
         healthBarFill.sizeDelta = new Vector2(newWidth, healthBarFill.sizeDelta.y);
     }
 
-
-    void Die()
+public float GetHealth()
     {
-        isDead = true;
+        return currentHealth;
     }
+    public void SetHealth(float newHealth)
+    {
+        currentHealth = newHealth;
+    }
+
 }

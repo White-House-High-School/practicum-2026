@@ -12,7 +12,7 @@ public class EnemyDamage : MonoBehaviour
 
             BaseHealth baseHealth = collision.gameObject.GetComponentInParent<BaseHealth>();
 
-            Debug.Log("BaseHealth found: " + baseHealth);
+//            Debug.Log("BaseHealth found: " + baseHealth);
 
             if (baseHealth != null)
             {
