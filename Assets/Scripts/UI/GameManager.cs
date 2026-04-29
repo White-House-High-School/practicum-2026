@@ -46,6 +46,10 @@ public class GameManager : MonoBehaviour
             if (!isGameOver)
             {
                 GameOver();
+                var baseHealth = Basket.GetComponent<BaseHealth>();
+            
+            Debug.Log("Max Health " + baseHealth.maxHealth);
+            Debug.Log("Current Health " + baseHealth.currentHealth);
             }
         }
 

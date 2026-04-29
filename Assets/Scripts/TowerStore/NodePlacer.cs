@@ -1,5 +1,6 @@
+using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
-
+[ExecuteAlways]
 public class NodePlacer : MonoBehaviour
 {
 
@@ -14,9 +15,9 @@ private GameObject[,] NodeArray; // The total area of the playable field, in nod
 
 BoxCollider nodeCollider;
     private int mapArea; // The total area of the playable field, in nodes.
-    void Awake ()
+    void Start()
     {
-
+        
         NodeX = startPos.position.x;
         NodeZ = startPos.position.z;
         nodeCollider = NodePrefab.GetComponent<BoxCollider>();
@@ -30,6 +31,7 @@ BoxCollider nodeCollider;
         
     }
 
+    [ContextMenu ("Place Node Grid")]
     void makeNodeGrid()
     {
         float nodeSizeX = NodePrefab.transform.localScale.x;
@@ -37,19 +39,34 @@ BoxCollider nodeCollider;
 
         float defaultX = startPos.position.x;
             for (int i = 0; i < mapLength; i++)
-            {         
+            {       
+                 
                 for (int j = 0; j < mapWidth; j++)
                 {
+                    bool canPlace = true;
+
                     foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Scene Object") )
                     {
-                        if (!pointIsInsideGameObject(obj, new Vector3(NodeX, 0, NodeZ)))
+                        if (pointIsInsideGameObject(obj, new Vector3(NodeX, 0, NodeZ)))
                         {
-
-                            NodeArray[i, j] = placeNode("Tower Node", NodeX, NodeZ);
+                            canPlace = false;
+                            Debug.Log(canPlace);
+                        }
+                        else
+                        {
+                            canPlace = true;
+                            Debug.Log(canPlace);
                         }
                     }
-                        NodeX += nodeGap + nodeSizeX; // Problem here
-                        //Debug.Log(nodeSizeZ);
+
+                    if (canPlace)
+                    {
+                        NodeArray[i, j] = placeNode("Tower Node", NodeX, NodeZ);
+                        Debug.Log("Placing");
+                    }
+                     
+                    NodeX += nodeGap + nodeSizeX; // Problem here
+                    //Debug.Log(nodeSizeZ);
                     
                 }
                 NodeZ += nodeGap + nodeSizeZ;
@@ -57,11 +74,19 @@ BoxCollider nodeCollider;
             }
     }
 
+    [ContextMenu ("Remove All Nodes")]
+    void RemoveNodes()
+    {
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Tower Node") )
+        {
+            DestroyImmediate(obj);
+        }
+    }
     bool pointIsInsideGameObject(GameObject obj, Vector3 point)
     {
 
         Vector3 closest = obj.GetComponent<Collider>().ClosestPoint(point);
-
+        
         return closest == point;
     }
 
@@ -70,6 +95,7 @@ BoxCollider nodeCollider;
 
         Vector3 position = new Vector3(Nx, 0, Nz);
         GameObject node = Instantiate(NodePrefab, position, Quaternion.identity);
+        
         node.gameObject.tag = tag;
 
         return node;

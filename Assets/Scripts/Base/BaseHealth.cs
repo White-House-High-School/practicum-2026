@@ -18,8 +18,6 @@ public class BaseHealth : MonoBehaviour
         
     }
 
-    
-
     public void TakeDamage(int damage)
     {
         if (isDead) return;
